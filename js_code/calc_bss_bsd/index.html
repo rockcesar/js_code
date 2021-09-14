@@ -36,6 +36,7 @@
                 $( "#bss" ).keyup(function() {
                     if(parseFloat($("#bss").val()) > 0)
                     {
+			$("#bss").val(parseFloat($("#bss").val()).toFixed(2));
                         $("#bsd").val(parseFloat($("#bss").val()/1000000).toFixed(8));
                     }else{
                         $("#bsd").val("");
@@ -44,6 +45,7 @@
                 $( "#bsd" ).keyup(function() {
                     if(parseFloat($("#bsd").val()) > 0)
                     {
+			$("#bsd").val(parseFloat($("#bsd").val()).toFixed(8);
                         $("#bss").val(parseFloat($("#bsd").val()*1000000).toFixed(2));
                     }else{
                         $("#bss").val("");
