@@ -36,10 +36,6 @@
                 $( "#bss" ).keyup(function() {
                     if(parseFloat($("#bss").val()) > 0)
                     {
-                        var num = parseFloat($("#bss").val());
-                        num = num.toString();
-                        num = num.slice(0, (num.indexOf("."))+3);
-                        $("#bss").val(num);
                         $("#bsd").val(parseFloat($("#bss").val()/1000000).toFixed(8));
                     }else{
                         $("#bsd").val("");
@@ -48,10 +44,6 @@
                 $( "#bsd" ).keyup(function() {
                     if(parseFloat($("#bsd").val()) > 0)
                     {
-                        var num = parseFloat($("#bsd").val());
-                        num = num.toString();
-                        num = num.slice(0, (num.indexOf("."))+9);
-                        $("#bsd").val(num);
                         $("#bss").val(parseFloat($("#bsd").val()*1000000).toFixed(2));
                     }else{ 
                         $("#bss").val("");
