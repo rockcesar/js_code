@@ -24,8 +24,8 @@
         <div class="container form-group" style="text-align:center">
             Bolívar Soberano:<br/><input id="bss" name="bss" class="form-text" type="number" min="0" lang="es-VE"/>
             <br/>Bolívar Digital:<br/><input id="bsd" name="bsd" class="form-text" type="number" min="0" lang="es-VE"/>
-            <br/><br/><input id="convertir_bss_bsd" name="convertir_bss_bsd" value="Convertir BSS a BSD" type="button" class="btn btn-primary"/>
-            <br/><br/><input id="convertir_bsd_bss" name="convertir_bsd_bss" value="Convertir BSD a BSS" type="button" class="btn btn-primary"/>
+            <!--<br/><br/><input id="convertir_bss_bsd" name="convertir_bss_bsd" value="Convertir BSS a BSD" type="button" class="btn btn-primary"/>
+            <input id="convertir_bsd_bss" name="convertir_bsd_bss" value="Convertir BSD a BSS" type="button" class="btn btn-primary"/>-->
             
             <br/><br/>
             <a href="https://github.com/rockcesar/js_code/" target="_blank" class="btn btn-link">Watch code</a>
@@ -33,16 +33,20 @@
 
         <script type="text/javascript">
             $( document ).ready(function() {
-                $( "#convertir_bss_bsd" ).click(function() {
+                $( "#bss" ).keyup(function() {
                     if(parseFloat($("#bss").val()) > 0)
                     {
                         $("#bsd").val(parseFloat($("#bss").val())/1000000,00);
+                    }else{
+                        $("#bsd").val("");
                     }
                 });
-                $( "#convertir_bsd_bss" ).click(function() {
+                $( "#bsd" ).keyup(function() {
                     if(parseFloat($("#bsd").val()) > 0)
                     {
                         $("#bss").val(parseFloat($("#bsd").val())*1000000,00);
+                    }else{ 
+                        $("#bss").val("");
                     }
                 });
             });
