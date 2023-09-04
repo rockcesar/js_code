@@ -1,7 +1,7 @@
 <script>
       var last_val;
       function setCookie(cName, cValue) {
-          document.cookie = cName + "=" + cValue + "; ";
+          document.cookie = cName + "=" + cValue + "; path=/";
           var cookiesEnabled = document.cookie.indexOf(cName+'=') !== -1;
           if(!cookiesEnabled)
               if(cName == "last_val")
