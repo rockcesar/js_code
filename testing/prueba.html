@@ -1,0 +1,34 @@
+<script>
+      var last_station;
+      function setCookie(cName, cValue) {
+          document.cookie = cName + "=" + cValue + "; ";
+          var cookiesEnabled = document.cookie.indexOf(cName+'=') !== -1;
+          if(!cookiesEnabled)
+              if(cName == "last_station")
+                  last_station = cValue;
+          alert("cookie= " + document.cookie);
+      }
+      
+      function getCookie(cName) {
+          var cookiesEnabled = document.cookie.indexOf(cName+'=') !== -1;
+          if(!cookiesEnabled)
+              if(cName == "last_station")
+              {
+                  alert("cookie= " + document.cookie);
+                  return last_station;
+              }
+
+          const name = cName + "=";
+          const cDecoded = decodeURIComponent(document.cookie); //to be careful
+          const cArr = cDecoded.split('; ');
+          var res = "";
+          cArr.forEach(val => {
+              if (val.indexOf(name) === 0) res = val.substring(name.length);
+          })
+          alert("cookie= " + document.cookie);
+          return res;
+      }
+      
+      setCookie("last_station", 10);
+      getCookie("last_station");
+</script>
