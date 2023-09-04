@@ -1,19 +1,19 @@
 <script>
-      var last_station;
+      var last_val;
       function setCookie(cName, cValue) {
           document.cookie = cName + "=" + cValue + "; ";
           var cookiesEnabled = document.cookie.indexOf(cName+'=') !== -1;
           if(!cookiesEnabled)
-              if(cName == "last_station")
-                  last_station = cValue;
+              if(cName == "last_val")
+                  last_val = cValue;
       }
       
       function getCookie(cName) {
           var cookiesEnabled = document.cookie.indexOf(cName+'=') !== -1;
           if(!cookiesEnabled)
-              if(cName == "last_station")
+              if(cName == "last_val")
               {
-                  return last_station;
+                  return last_val;
               }
 
           const name = cName + "=";
@@ -26,8 +26,8 @@
           return res;
       }
       
-      setCookie("last_station", 10);
+      setCookie("last_val", 10);
       alert("cookie1= " + document.cookie);
-      getCookie("last_station");
+      getCookie("last_val");
       alert("cookie2= " + document.cookie);
 </script>
