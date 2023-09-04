@@ -14,7 +14,6 @@
           if(!cookiesEnabled)
               if(cName == "last_station")
               {
-                  alert("cookie= " + document.cookie);
                   return last_station;
               }
 
@@ -25,10 +24,11 @@
           cArr.forEach(val => {
               if (val.indexOf(name) === 0) res = val.substring(name.length);
           })
-          alert("cookie= " + document.cookie);
           return res;
       }
       
       setCookie("last_station", 10);
+      alert("cookie1= " + document.cookie);
       getCookie("last_station");
+      alert("cookie2= " + document.cookie);
 </script>
